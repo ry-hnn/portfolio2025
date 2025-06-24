@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Hennessy</title>
+    <link class="browser-icon" rel="icon" href="./assets/RH.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="index.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("5iHLrHiuK4RfvKLrc");
+        })();
+    </script>
+</head>
+
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/RH.blk.png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link click" onclick="toggleModal()">
+                    <a href="#" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                ">About</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="#projects" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                ">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                "><i class="fa-solid fa-circle-half-stroke"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title"></h1>
+                <h1 class="title ">Ryan</h1>
+                <p class="header__para">
+                    As a <b class="bold">Frontend Developer</b> I build intuitive UIs with smooth functionality and
+                    modern design.
+                    <br>
+                    Here's a bit more <b class="teal click" onclick="toggleModal()">about me</b>.
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/ryanphennessy/" class="social__link click">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/ry-hnn" class="social__link click">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="./assets/rh.resume2025.pdf" class="social__link click">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title--about">Frontend Developer</h4>
+                <p class="modal__para">
+                    I'm focused on building streamlined, responsive user interfaces and bringing design ideas to life.
+                    My work spans e-commerce sites, streaming apps, digital art platforms, and AI-powered
+                    apps—featuring smooth animations, integrated APIs, and dynamic user functionality.
+                    <br>
+                    Whether I’m working solo or
+                    collaborating with a team, I stay resourceful, curious, and driven to improve both product and
+                    process.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/js264.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/CSS3_logo.svg.png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/JS.logo.png" alt="">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/React-icon.svg.png" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-regular fa-circle-xmark modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's chat
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    Send a message with what you are looking for
+                </h3>
+                <form id="contact_form" onsubmit="contact(event)">
+                    <div class="form_item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text">
+                    </div>
+                    <div class="form_item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email">
+                    </div>
+                    <div class="form_item">
+                        <label class="form__item--label">Messge</label>
+                        <input class="input" name="message" type="text">
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thank you for the message. Looking forward to speaking soon.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">Here are some of my <b class="teal">projects</b>
+                </h1>
+                <ul class="project__list">
+                    <li class="project"></li>
+                    <div class="project__wrapper">
+                        <img src="./assets/library.Landing.png" class="project__img" alt="">
+                        <div class="project__wrapper--bg"></div>
+                        <div class="project__description">
+                            <h3 class="project__description--title">
+                                E Commerce Library
+                            </h3>
+                            <h4 class="project__description--sub-title">
+                                Html, CSS, JavaScript, React
+                            </h4>
+                            <p class="project__description--para">
+                                Built a fully functional eCommerce library application using React, HTML, and CSS,
+                                allowing users to browse, search, and purchase books through a clean, intuitive
+                                interface. Implemented featured and discount book listings with a
+                                responsive UI to ensure seamless access across devices. Integrated key eCommerce
+                                features like a shopping cart, checkout flow, and user-friendly navigation to enhance
+                                usability and streamline the buying experience.
+                            </p>
+                            <div class="project__description--links">
+                                <a href="https://github.com/ry-hnn/library-react.1" class="project__description--link"
+                                    target="_blank"
+                                    onclick="window.open('https://github.com/ry-hnn/library-react.1', '_blank')">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://library-react1.vercel.app/" class="project__description--link"
+                                    target="_blank"
+                                    onclick="window.open('https://library-react1.vercel.app/', '_blank')">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <li class="project"></li>
+                    <div class="project__wrapper">
+                        <img src="./assets/streamingApp.Myflix.png" class="project__img" alt="">
+                        <div class="project__wrapper--bg"></div>
+                        <div class="project__description">
+                            <h3 class="project__description--title">
+                                Movie/TV Streaming App
+                            </h3>
+                            <h4 class="project__description--sub-title">
+                                HTML, CSS, JavaScript, React
+                            </h4>
+                            <p class="project__description--para">
+                                Implemented a search feature powered by an external API to let users explore movies and
+                                shows by title, along with a trending section that fetches and displays popular movies
+                                based on the user searches.
+                            </p>
+                            <div class="project__description--links">
+                                <a href="https://myflix-streaming.vercel.app/" class="project__description--link"
+                                    target="_blank"
+                                    onclick="window.open('https://movie-reactapp-seven.vercel.app/', '_blank')">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <li class="project"></li>
+                    <div class="project__wrapper">
+                        <img src="./assets/streamReel.Landing.png" class="project__img" alt="">
+                        <div class="project__wrapper--bg"></div>
+                        <div class="project__description">
+                            <h3 class="project__description--title">
+                                Custom Streaming App
+                            </h3>
+                            <h4 class="project__description--sub-title">
+                                HTML, CSS, JavaScript, React
+                            </h4>
+                            <p class="project__description--para">
+                                Developed a custom movie streaming web app using HTML, CSS, React, and JavaScript,
+                                featuring an integrated API search with filtering by release year. Users can browse
+                                dynamically loaded search results and navigate to dedicated pages for each movie to view
+                                details.
+                            </p>
+                            <div class="project__description--links">
+                                <a href="https://streaming-react-app-wine.vercel.app/"
+                                    class="project__description--link" target="_blank"
+                                    onclick="window.open('https://streaming-react-app-wine.vercel.app/', '_blank')">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <li class="project"></li>
+                    <div class="project__wrapper">
+                        <img src="./assets/TReact.landing.png" class="project__img" alt="">
+                        <div class="project__wrapper--bg"></div>
+                        <div class="project__description">
+                            <h3 class="project__description--title">
+                                SaaS App UI
+                            </h3>
+                            <h4 class="project__description--sub-title">
+                                HTML, CSS
+                            </h4>
+                            <p class="project__description--para">
+                                Designed a clean, modern UI for a SaaS web application using HTML and CSS. Focused
+                                on responsive layout, intuitive navigation, and a minimalist design system to deliver an
+                                effective design.
+                            </p>
+                            <div class="project__description--links">
+                                <a href="https://ry-hnn.github.io/saas.original-updated/"
+                                    class="project__description--link" target="_blank"
+                                    onclick="window.open('https://ry-hnn.github.io/saas.original-updated/', '_blank')">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <figure>
+                <img id="personal-logo--footer" src="./assets/RH.blk.png" alt="">
+            </figure>
+            <div class="footer__social--list">
+                <a href="https://github.com/ry-hnn" target="_blank"
+                    onclick="window.open('https://github.com/ry-hnn', '_blank')"
+                    class="footer__social--link link__hover-effect link__hover-effect--teal">
+                    Github
+                </a>
+                <a href="https://www.linkedin.com/in/ryanphennessy/" target="_blank"
+                    onclick="window.open('https://www.linkedin.com/in/ryanphennessy/', '_blank')"
+                    class="footer__social--link link__hover-effect link__hover-effect--teal">
+                    LinkedIn
+                </a>
+                <a href="#" onclick="toggleModal()"
+                    class="footer__social--link link__hover-effect link__hover-effect--teal">
+                    Email
+                </a>
+                <a href="./assets/rh.resume2025.pdf" target="_blank"
+                    onclick="window.open('./assets/rh.resume2025.pdf', '_blank')"
+                    class="footer__social--link link__hover-effect link__hover-effect--teal">
+                    Resume
+                </a>
+            </div>
+            <p class="copyright--text">Copyright &copy; 2024 Ryan Hennessy</p>
+        </div>
+    </footer>
+</body>
+
+</html>
